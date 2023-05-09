@@ -21,7 +21,7 @@ import "fmt"
 
 func main() {
 	// A map with string keys and integer elements.
-	var age map[string]int
+	var age = make(map[string]int)
 
 	// The program will crash if the map is not initialized correctly
 	// before accessing a key.
@@ -37,5 +37,5 @@ func main() {
 	// key you are searching for.
 	// If the key is not found then the access
 	// yields the zero value for the element type.
-	fmt.Println("Sarah's Age:", age["Sarah"])
+	fmt.Println("Sarah's Age:", age["sarah"])
 }

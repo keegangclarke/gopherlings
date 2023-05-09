@@ -23,6 +23,10 @@
 
 package main
 
+import (
+	"fmt"
+)
+
 // The import statement always follows the `package`
 // declaration.
 
