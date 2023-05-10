@@ -30,8 +30,8 @@ func main() {
 type universalID int
 
 // Set sets the receiver universalID to newID.
-func (uid universalID) Set(newID int) {
-	uid = universalID(newID)
+func (uid *universalID) Set(newID int) {
+	*uid = universalID(newID)
 }
 
 func (uid universalID) Get() int {

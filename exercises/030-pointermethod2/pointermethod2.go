@@ -21,6 +21,9 @@ type userDatabase struct {
 }
 
 // Methods are usually found below the type definition in Go.
+func (u *userDatabase) AddAdmin(email string) {
+	u.admins = append(u.admins, email)
+}
 
 // IsAdmin returns true if the email is inside the admin database
 // and false otherwise.

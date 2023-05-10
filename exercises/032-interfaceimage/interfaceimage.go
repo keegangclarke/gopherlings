@@ -15,6 +15,7 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"time"
 )
 
 const imageSize = 100
@@ -33,6 +34,8 @@ func main() {
 	// of there being a star on any given pixel. Try setting it to a value
 	// between 0 and 100 and run the code again.
 	var s stars
+	rand.Seed(time.Now().UnixNano())
+	s = stars(rand.Intn(101))
 	err = png.Encode(fp, s)
 	if err != nil {
 		log.Fatal(err)

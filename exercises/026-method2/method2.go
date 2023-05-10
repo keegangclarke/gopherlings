@@ -30,6 +30,6 @@ type XORer bool
 // operator to perform a xor between two values of the bool type.
 // This code has an error due to operations between two distinct types.
 // These two values should be of same type to perform the inequality operation!
-func (a XORer) xor(b bool) bool {
+func (a XORer) xor(b XORer) bool {
 	return a != b
 }

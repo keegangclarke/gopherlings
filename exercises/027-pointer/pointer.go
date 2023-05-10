@@ -35,14 +35,17 @@ func main() {
 	// the desired result: zeroIt should modify value without needing
 	// a return parameter.
 	value := 2
-	zeroIt(value) // We may need to pass `value` by reference here.
+	ref := &value
+	zeroIt(&value) // We may need to pass `value` by reference here.
 	fmt.Println(value)
+	fmt.Println(*ref)
 }
 
 // We want to modify p from inside a function- so we
 // need the help of a pointer! Change the argument type
 // so that zeroIt accepts a pointer and then modify the function
 // body so that we assign zero to p.
-func zeroIt(p int) {
-	p = 0
+func zeroIt(p *int) int {
+	*p = 0
+	return *p
 }

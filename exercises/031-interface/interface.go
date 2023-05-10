@@ -21,8 +21,8 @@ func main() {
 	// These lines below once uncommented should run with no problem once the
 	// problem at hand has been solved.
 
-	// d := Decimal(myNumber)
-	// PrintNumber(d)
+	d := Decimal(myNumber)
+	PrintNumber(d)
 
 	b := Binary(myNumber)
 	PrintNumber(b)
@@ -43,8 +43,13 @@ func PrintNumber(n Number) {
 // In contrast with other languages, in Go there is no "implements" clause. One must
 // only write the methods and the compiler will know that the methods have been implemented.
 
+type Decimal float32
 type Binary int
 type Roman int
+
+func (d Decimal) Numeral() string {
+	return fmt.Sprintf("%f", d)
+}
 
 func (b Binary) Numeral() string {
 	return fmt.Sprintf("%b", b)
